@@ -12,9 +12,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "mongoose": "^5.1.2",
-    "nodemon": "^1.17.5"
-  },
-  "devDependencies": {
+    "nodemon": "^1.17.5",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
