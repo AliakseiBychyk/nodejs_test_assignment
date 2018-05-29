@@ -26,6 +26,17 @@ You can send HTTP request with [Postman](https://www.getpostman.com/apps).
 
 The application serves data on `'/'` and `'/page=:pageNumber'` routes.
 
+
+Additionally I deployed the application on [Heroku](https://nodejs-test-assignment.herokuapp.com/), whereas database deployed on MongoDB Atlas cloud.
+
+You can navigate in browser, e.g.:
+```
+https://nodejs-test-assignment.herokuapp.com/page=9
+``` 
+or send request with Postman on this endpoint.
+
+
+
 Technology stack applied in the project:
 - Node.js
 - Express
