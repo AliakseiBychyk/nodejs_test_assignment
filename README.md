@@ -33,7 +33,7 @@ You can navigate in browser, e.g.:
 ```
 https://nodejs-test-assignment.herokuapp.com/page=9
 ``` 
-or send request with Postman on this endpoint.
+or send request with Postman to this endpoint.
 
 
 
