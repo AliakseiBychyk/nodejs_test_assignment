@@ -42,7 +42,7 @@ const getDataWithId = (showId, cb) => {
     __v: 0,
     'cast._id': 0,
   }, (err, data) => {
-    if (data.length === 0) {
+    if (!data || data.length === 0) {
       getDataFromApi(showId, (err, data) => {
         console.log('from API');
         cb(err, data);
