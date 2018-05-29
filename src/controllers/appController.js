@@ -87,9 +87,8 @@ const getDataFromApi = (showId, cb) => {
 
         newShow.save((err, show) => {
           if (err) return console.error(err);
+          cb(err, data);
         });
-
-        cb(err, data);
       });
     });
   });
