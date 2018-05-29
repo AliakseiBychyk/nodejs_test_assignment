@@ -1,4 +1,5 @@
 import http from 'http';
+import { EventEmitter } from 'events';
 import mongoose from 'mongoose';
 import DataSchema from '../models/appModel';
 
@@ -12,16 +13,24 @@ export const getEmptyRoute = (req, res) => {
 export const getRequestedData = (req, res) => {
   const page = req.params.page;
   const startId = 1 + (page - 1) * 10;
-  let array = [];
+
+  const emitter = new EventEmitter();
+
+  const jsonData = [];
 
   for (let showId = startId; showId < startId + 10; showId++) {
     getDataWithId(showId, (err, data) => {
       if (err) throw err;
-      array.push(data);
+      jsonData.push(data);
+      if (jsonData.length === 10) {
+        emitter.emit('loaded', jsonData);
+      }
     });
   }
-  console.log('array\n', array);
-  res.json(array);
+
+  emitter.on('loaded', (jsonData) => {
+    res.json(jsonData);
+  });
 };
 
 
