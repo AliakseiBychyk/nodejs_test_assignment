@@ -35,7 +35,13 @@ export const getRequestedData = (req, res) => {
 
 
 const getDataWithId = (showId, cb) => {
-  ShowData.find({ id: showId }, (err, data) => {
+  ShowData.find({
+    id: showId,
+  }, {
+    _id: 0,
+    __v: 0,
+    'cast._id': 0,
+  }, (err, data) => {
     if (data.length === 0) {
       getDataFromApi(showId, (err, data) => {
         console.log('from API');
