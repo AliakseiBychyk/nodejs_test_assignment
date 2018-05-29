@@ -1,0 +1,27 @@
+{
+  "name": "test_assignment_rtl_nodejs",
+  "version": "1.0.0",
+  "description": "Test assignment Node.js - TvMaze Scrapper",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --require babel-core/register ./app.js",
+    "lint": "eslint ./**/*.js"
+  },
+  "author": "Aliaksei Bychyk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.1.2",
+    "nodemon": "^1.17.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.19.1",
+    "eslint-config-strongloop": "^2.1.0"
+  }
+}
