@@ -126,8 +126,9 @@ const getCastFromApi = (showId, cb) => {
         name: cast.person.name,
         birthday: cast.person.birthday,
       })).sort((a, b) => {
-        const keyA = a.birthday === null ? null : new Date(a.birthday);
-        const keyB = b.birthday === null ? null : new Date(b.birthday);
+        const latest = new Date(-5E12);
+        const keyA = a.birthday === null ? latest : new Date(a.birthday);
+        const keyB = b.birthday === null ? latest : new Date(b.birthday);
 
         if (keyA < keyB) return 1;
         if (keyA > keyB) return -1;
